@@ -1,0 +1,28 @@
+{
+  "app": {
+    "launch": {
+      "local_path": "index.html"
+    }
+  },
+  "content_scripts": [{
+    "all_frames": false,
+    "css": [
+      "lib/bootstrap-3.0.3/css/bootstrap.css"
+    ],
+    "js": [
+      "lib/jquery-1.10.2/jquery.js",
+      "contentscript.js"
+    ],
+    "matches": ["http://www.ted.com/talks/*", "https://www.ted.com/talks/*"],
+    "run_at": "document_end"
+  }],
+  "background": {
+    "scripts": ["lib/jquery-1.10.2/jquery.js", "models.js", "background.js"],
+    "persistence": false
+  },
+  "name": "LEULTED",
+  "description": "LEULTED is a listen-eval-understand loop for TED. (UnOfficial App.)",
+  "permissions": ["background", "unlimitedStorage", "http://www.ted.com/*"],
+  "manifest_version": 2,
+  "version": "0.0.0.1"
+}
